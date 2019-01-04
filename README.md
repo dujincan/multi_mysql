@@ -1,1 +1,1 @@
-# multi_mysql
+# mysql 5.6多实例安装脚本与启动脚本
