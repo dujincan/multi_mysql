@@ -71,13 +71,15 @@ then
                     action "mysql${n} startup successful, passwd in /tmp/passwd.log" /bin/true
                 else
                     action "mysql${n} add passwd fail" /bin/false
+                    exit $?
                 fi
             else
                 action "mysql${n} startup fail, please check /tmp/mysqld${n}_start.log" /bin/false 
+                exit $?
             fi
         else
             action "mysql${n} init  fail, please check /tmp/mysql${n}_init.log" /bin/false
-            exit 1                        
+            exit $?                       
         fi
     done
 
